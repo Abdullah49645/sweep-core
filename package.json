@@ -1,0 +1,28 @@
+{
+  "name": "sweep-core",
+  "version": "0.1.0",
+  "description": "Predictive one-switch scanning engine for TV interfaces: intent model, cost-optimal scan trees, scan scheduler and benchmark harness.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "bench": "tsx bench/run.ts"
+  },
+  "keywords": ["accessibility", "switch-access", "scanning", "fire-tv", "vega", "aac"],
+  "author": "Abdullah49645",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Abdullah49645/sweep-core"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^2.0.0"
+  }
+}

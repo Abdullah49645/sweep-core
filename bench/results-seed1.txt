@@ -1,0 +1,25 @@
+Sweep simulation · 39 intents · 500 tasks/condition · scan 1200 ms · seed 1
+Synthetic user: reaction 650±150 ms, miss 5%, false press 2%
+
+A) Targets drawn from the user’s own history (prediction is right on average)
+variant                                            mean   median  presses  wrong/task     done  model E[t]
+Row/column, catalogue order (8 cols)             10.3 s    8.5 s     2.68       0.328  500/500       6.7 s
+Row/column, predicted order (8 cols)              8.0 s    6.3 s     2.60       0.294  500/500       5.7 s
+Sweep, fastest (no press penalty)                 6.0 s    4.9 s     3.28       0.054  500/500       4.5 s
+Sweep, balanced (default)                         6.9 s    5.6 s     2.57       0.150  500/500       4.8 s
+
+B) Targets uniformly random (prediction is no help — worst case for Sweep)
+variant                                            mean   median  presses  wrong/task     done  model E[t]
+Row/column, catalogue order (8 cols)             11.2 s    9.5 s     2.71       0.346  500/500       6.7 s
+Row/column, predicted order (8 cols)             11.3 s    8.7 s     2.70       0.328  500/500       5.7 s
+Sweep, fastest (no press penalty)                 7.8 s    6.2 s     3.34       0.082  500/500       4.5 s
+Sweep, balanced (default)                         9.2 s    7.5 s     2.59       0.126  500/500       4.8 s
+
+C) Fixed 1.2 s scan vs auto-calibrated scan (10 calibration presses), Sweep balanced, history targets
+user                              interval     mean  presses  wrong/task     done
+typical (650±150 ms) · fixed         1.2 s    6.9 s     2.57       0.150  500/500
+typical (650±150 ms) · auto          1.0 s    6.8 s     2.43       0.198  500/500
+slow (1100±300 ms, 8% miss) · fixed     1.2 s   30.4 s     3.67       0.418  497/500
+slow (1100±300 ms, 8% miss) · auto     1.8 s   11.9 s     2.69       0.176  500/500
+fast (420±80 ms) · fixed             1.2 s    5.9 s     2.56       0.138  500/500
+fast (420±80 ms) · auto              0.6 s    3.7 s     2.33       0.152  500/500
